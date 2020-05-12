@@ -1,0 +1,264 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+/* Utility Styles */
+.container {
+  width: 74%;
+  margin: 2rem auto;
+}
+
+.card {
+  height: 200px;
+  border: 1px solid black;
+}
+
+/* Navbar Styles */
+.navbar-top {
+  background: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem;
+}
+
+.fa-bars,
+.logo {
+  display: none;
+}
+
+.navbar-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.navbar-top-left,
+.navbar-top-right,
+.navbar-center-left,
+.navbar-bottom {
+  display: flex;
+}
+
+.navbar-top .nav-link a {
+  color: #fff;
+}
+
+.navbar-center .nav-link a {
+  color: #555;
+}
+
+.navbar-center i {
+  color: #555;
+}
+
+.navbar-bottom {
+  background-color: yellow;
+  padding: 0.5rem;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+
+/* Featured Articles Section */
+.feature-articles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0.5rem;
+}
+
+.feature-articles-grid img {
+  width: 100%;
+}
+
+.main-feature-article {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+/* Latest News Section */
+
+.latest-news-article-grid,
+.latest-funding-article-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1.5rem;
+  margin: 1.5rem;
+}
+
+.latest-funding-section {
+  margin-top: 1.5rem;
+}
+/* News Categories Section */
+.news-categories-section {
+  padding: 1rem;
+}
+
+.news-article-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1.5rem;
+}
+
+.news-article-grid .news-category {
+  height: 550px;
+  margin: 0.3rem;
+  padding: 1rem;
+  border: 1px solid black;
+}
+
+/* Latest Deals Section */
+.latest-deals-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1.5rem;
+  margin: 1.5rem;
+}
+
+/* Footer Styles */
+.footer {
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.footer .footer-social-links,
+.footer .footer-nav-links {
+  display: flex;
+  justify-content: center;
+  background-color: #333;
+  padding-top: 2rem;
+}
+
+.footer .footer-nav-links {
+  padding-bottom: 2rem;
+}
+
+.footer .footer-social-links a,
+.footer .footer-nav-links a {
+  color: #ccc;
+  margin: 1.5rem;
+}
+
+.footer-bottom {
+  background-color: #111;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 2.5rem;
+}
+
+.footer-bottom img {
+  width: 2.5rem;
+}
+
+/* Media Queries */
+/* 
+At < 1024px -TNW logo is moved from featured article image to left side of navbar
+            - Latest News section goes to a 3 column grid 
+            - Latest Funding section goes to a 3 column grid and 4th article(last-child) is removed
+            
+            - News Categories section goes to a 2 column grid
+            - Featured Deals goes to a 3 column grid
+
+At < 768px  - navbar collapses into hamburger icon
+            - all grids go to single column/block display */
+
+/* Tablet Display Media Queries - < 1024px screen width */
+
+@media (max-width: 1024px) {
+  .container {
+    width: 95%;
+  }
+  .latest-news-article-grid,
+  .latest-funding-article-grid,
+  .latest-deals-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.5rem;
+    margin: 0;
+  }
+
+  .last-funding-card {
+    display: none;
+  }
+
+  .news-article-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile Device Display Media Queries - < 768px screen width */
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+
+  .navbar-top,
+  .navbar-center-left {
+    display: none;
+  }
+
+  .logo {
+    display: block;
+    color: red;
+    width: 2rem;
+  }
+
+  .navbar-icons {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .fa-bars {
+    display: flex;
+    cursor: pointer;
+  }
+
+  /* Featured Articles Section */
+  .feature-articles-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 0.5rem;
+  }
+
+  .feature-articles-grid img {
+    width: 100%;
+    max-height: 200px;
+  }
+
+  .main-feature-article {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .latest-news-article-grid,
+  .latest-funding-article-grid,
+  .news-article-grid,
+  .latest-deals-grid {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 0;
+    margin: 1rem;
+  }
+
+  .news-article-grid {
+    margin: 0;
+    padding: 0;
+  }
+
+  .news-categories-section {
+    padding: 0.7rem;
+  }
+
+  .footer .footer-social-links a,
+  .footer .footer-nav-links a {
+    margin: 0.75rem;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    padding: 2rem 22%;
+  }
+}
