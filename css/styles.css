@@ -17,13 +17,31 @@
   border: 1px solid black;
 }
 
+.section-title,
+.category-title {
+  color: #f42;
+  font-size: 1.7rem;
+  font-weight: 900;
+  margin: 1rem 1.5rem;
+}
+
+.category-title {
+  margin: 1rem 0;
+}
+
+.section-title:hover,
+.funding-info li:hover {
+  color: #000;
+  cursor: pointer;
+}
+
 /* Navbar Styles */
 .navbar-top {
   background: #000;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.7rem;
+  padding: 0.5rem;
 }
 
 .fa-bars,
@@ -41,7 +59,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem;
+  padding: 0.2rem 0.5rem;
 }
 
 .navbar-top-left,
@@ -56,6 +74,7 @@
   padding: 0.3rem 0.75rem;
   font-size: 0.85rem;
 }
+
 .navbar-top .nav-link.white a {
   color: #fff;
 }
@@ -81,23 +100,55 @@
 /* Featured Articles Section */
 .feature-articles-section {
   margin: 0 0.4rem;
+  height: 56vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: #fff;
+  padding: 1rem;
 }
 
 .feature-articles-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 0.25rem 0.5rem;
-}
-
-.main-feature-article img,
-.feature-article img {
-  width: 100%;
+  grid-gap: 0.5rem;
   height: 100%;
 }
 
-.main-feature-article {
+.feature-article {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.feature-article-header {
+  display: flex;
+  justify-content: space-between;
+}
+.feature-article-info {
+}
+
+#main-feature-article {
   grid-column: span 2;
   grid-row: span 2;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/feature-1.png") center center/cover;
+  height: 100%;
+  width: 100%;
+  justify-content: space-between;
+}
+
+#sub-feature-1 {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/feature-1.png") center center/cover;
+  height: 100%;
+  width: 100%;
+}
+
+#sub-feature-2 {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/feature-1.png") center center/cover;
+  height: 100%;
+  width: 100%;
 }
 
 /* Latest News Section */
@@ -117,12 +168,102 @@
 
 /* DELETE ME */
 .latest-news-article-grid .card,
-.latest-deals-grid .card {
+.latest-deals-grid .card,
+.latest-funding-article-grid .card {
   border: none;
 }
 
+/* Latest Funding Section */
 .latest-funding-section {
   margin-top: 1.5rem;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.latest-funding-section .section-header .funding-info {
+  display: flex;
+  margin-right: 1.5rem;
+}
+
+.funding-info li,
+.section-header span {
+  color: #f42;
+  font-size: 1.1rem;
+  border-right: 1px solid #f42;
+  padding: 0 0.6rem;
+}
+
+.funding-info li:last-of-type,
+.section-header span:last-of-type {
+  border: none;
+}
+
+.latest-funding-section .card {
+  position: relative;
+  height: 280px;
+}
+
+.card-header .funding-logo {
+  height: 65px;
+  width: 65px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.latest-funding-section .card-header {
+  background: #fed;
+  height: 40%;
+}
+
+.latest-funding-section .company-industry {
+  padding: 0.8rem;
+  line-height: 2;
+  background: #ffe;
+  color: #444;
+}
+
+.latest-funding-section .company-industry i {
+  color: #000;
+  padding-right: 0.3rem;
+}
+
+.latest-funding-section .company-industry .small {
+  font-size: 0.8rem;
+  line-height: 1.7;
+  margin-top: 1rem;
+}
+
+.funding-from {
+  color: #999;
+}
+
+.card-header h4 {
+  background-color: #f42;
+  height: 40px;
+  padding: 5% 40% 14%;
+  font-size: 1.7rem;
+  color: #fff;
+}
+
+.card-header span {
+  padding-left: 40%;
+}
+
+.company-funding {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.company-series {
+  color: #555;
+  text-transform: uppercase;
+  font-size: 0.8rem;
 }
 
 .card img {
@@ -147,13 +288,127 @@
 }
 
 .news-article-grid .news-category {
-  height: 550px;
   margin: 0.3rem;
+}
+
+.news-categories-section .category-featured {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: #fff;
   padding: 1rem;
-  border: 1px solid black;
+}
+
+/* News Categories Background Images - reconfigure to use variables  */
+.category-featured.apps {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/instagram.jpg") center center/cover;
+  height: 260px;
+}
+
+.category-featured.gear {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/huawei.jpg") center center/cover;
+  height: 260px;
+}
+
+.category-featured.tech {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/facebook.png") center center/cover;
+  height: 260px;
+}
+
+.category-featured.creative {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/emo.jpg") center center/cover;
+  height: 260px;
+}
+
+.category-featured.podium {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/greta.jpg") center center/cover;
+  height: 260px;
+}
+
+.category-featured.insights {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/gta.jpg") center center/cover;
+  height: 260px;
+}
+
+.category-featured.launch {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/facebook2.jpg") center center/cover;
+  height: 260px;
+}
+
+.category-featured.distract {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/fallout.jpg") center center/cover;
+  height: 260px;
+}
+
+.category-featured span:first-of-type,
+.category-latest span:first-of-type {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.most-popular-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
+  font-family: Arial;
+  line-height: 1;
+}
+
+.most-popular-author,
+.most-popular-date {
+  color: #ccc;
+}
+
+.most-popular-author {
+  font-size: 0.7rem;
+  padding-right: 0.5rem;
+}
+
+.category-latest {
+  display: flex;
+  color: #f42;
+  background-color: #fee;
+  height: 6rem;
+}
+
+.category-latest div {
+  padding: 0.5rem 0.7rem 0.5rem 1rem;
+}
+.category-latest img {
+  width: 6rem;
+  height: 6rem;
+  margin: 0;
+  padding: 0;
+}
+
+.category-latest .latest-title {
+  padding-top: 0.5rem;
+}
+
+.other-articles li:before {
+  content: "\2022";
+  color: #f42;
+  margin-right: 0.4rem;
+}
+
+.other-articles li {
+  padding: 0.5rem 0;
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  border-bottom: 1px solid #ddd;
 }
 
 /* Latest Deals Section */
+
 .latest-deals-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -161,6 +416,19 @@
   margin: 1.5rem;
 }
 
+.latest-deals-grid .article-title {
+  padding: 0.3rem 0;
+}
+.old-price {
+  color: #999;
+  text-decoration: line-through;
+  font-size: 0.8rem;
+}
+
+.sale-price {
+  color: #222;
+  font-weight: 100;
+}
 /* Footer Styles */
 .footer {
   width: 100%;
@@ -171,7 +439,7 @@
 .footer .footer-nav-links {
   display: flex;
   justify-content: center;
-  background-color: #333;
+  background-color: #222;
   padding-top: 2rem;
 }
 
@@ -179,12 +447,27 @@
   padding-bottom: 2rem;
 }
 
-.footer .footer-social-links a,
 .footer .footer-nav-links a {
   color: #ccc;
   margin: 1.5rem;
 }
 
+.footer .footer-nav-links a:hover {
+  color: #fff;
+}
+
+.footer .footer-social-links a .fa {
+  color: #fff;
+  background: #444;
+  padding: 0.7rem;
+  border-radius: 50%;
+  margin: 0.5em;
+  border: 2px solid #444;
+}
+
+.footer .footer-social-links a .fa:hover {
+  background-color: #000;
+}
 .footer-bottom {
   background-color: #111;
   color: #fff;
@@ -296,7 +579,7 @@ At < 768px  - navbar collapses into hamburger icon
 
   .footer .footer-social-links a,
   .footer .footer-nav-links a {
-    margin: 0.75rem;
+    margin: 0;
   }
 
   .footer-bottom {
