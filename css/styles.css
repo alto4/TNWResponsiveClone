@@ -13,7 +13,7 @@
 }
 
 .card {
-  height: 200px;
+  height: 230px;
   border: 1px solid black;
 }
 
@@ -31,6 +31,12 @@
   display: none;
 }
 
+.fa-search {
+  padding: 1rem;
+  transform: scaleX(-1);
+  border-right: 1px solid #bbb;
+}
+
 .navbar-center {
   display: flex;
   justify-content: space-between;
@@ -45,12 +51,18 @@
   display: flex;
 }
 
-.navbar-top .nav-link a {
+.nav-link a {
+  color: #bbb;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.85rem;
+}
+.navbar-top .nav-link.white a {
   color: #fff;
 }
 
 .navbar-center .nav-link a {
-  color: #555;
+  color: #777;
+  text-transform: uppercase;
 }
 
 .navbar-center i {
@@ -58,21 +70,29 @@
 }
 
 .navbar-bottom {
-  background-color: yellow;
+  background-color: #ffc600;
   padding: 0.5rem;
   color: #222;
-  margin-bottom: 0.5rem;
+  padding-left: 2rem;
+  margin-bottom: 0.2rem;
+  font-size: 0.9rem;
 }
 
 /* Featured Articles Section */
+.feature-articles-section {
+  margin: 0 0.4rem;
+}
+
 .feature-articles-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 0.5rem;
+  grid-gap: 0.25rem 0.5rem;
 }
 
-.feature-articles-grid img {
+.main-feature-article img,
+.feature-article img {
   width: 100%;
+  height: 100%;
 }
 
 .main-feature-article {
@@ -90,8 +110,30 @@
   margin: 1.5rem;
 }
 
+.latest-news-article-grid .card img,
+.latest-deals-grid .card img {
+  height: 135px;
+}
+
+/* DELETE ME */
+.latest-news-article-grid .card,
+.latest-deals-grid .card {
+  border: none;
+}
+
 .latest-funding-section {
   margin-top: 1.5rem;
+}
+
+.card img {
+  width: 100%;
+}
+
+.card .author,
+.card .date {
+  color: #999;
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
 }
 /* News Categories Section */
 .news-categories-section {
